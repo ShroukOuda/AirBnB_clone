@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
+'''base model'''
 
 
 class BaseModel:
+    '''base mode'''
 
     def __init__(self, *args, **kwargs):
         self.id = str(uuid.uuid4())
