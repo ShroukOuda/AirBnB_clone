@@ -5,7 +5,7 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     '''console'''
-    prompt = '(hbnb)'
+    prompt = '(hbnb) '
 
     def do_EOF(self, line):
         return True
