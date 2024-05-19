@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+'''base model'''
+
 import uuid
 from datetime import datetime
 from models.__init__ import storage
-'''base model'''
 
 
 class BaseModel:
@@ -27,7 +28,7 @@ class BaseModel:
 
     def save(self):
         self.updated_at = datetime.now()
-        storage.save(self)
+        storage.save()
 
     def to_dict(self):
         dict_copy = self.__dict__.copy()

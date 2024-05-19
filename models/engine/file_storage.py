@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+'''file storage'''
+
 import json
 import os
-'''file storage'''
 
 
 class FileStorage:
