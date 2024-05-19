@@ -31,4 +31,4 @@ class FileStorage:
                 for key, value in obj_dict.items():
                     class_name = value['__class__']
                     cls = globals()[class_name]
-                    FileStorage.__objects
+                    FileStorage.__objects = cls(**value)

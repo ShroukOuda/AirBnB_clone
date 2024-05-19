@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
+from models.__init__ import storage
 '''base model'''
 
 
@@ -17,6 +18,8 @@ class BaseModel:
                     self.__dict__[key] = datetime.fromisoformat(value)
                 else:
                     self.__dict__[key] = value
+        else:
+            storage.new(self)
 
     def __str__(self):
         return "[{}] ({}) {}"\
@@ -24,6 +27,7 @@ class BaseModel:
 
     def save(self):
         self.updated_at = datetime.now()
+        storage.save(self)
 
     def to_dict(self):
         dict_copy = self.__dict__.copy()
