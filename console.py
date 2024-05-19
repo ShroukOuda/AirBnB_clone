@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+'''command line interpreter'''
 import cmd
-'''Command Line Interpreter'''
 
 
 class HBNBCommand(cmd.Cmd):
@@ -13,6 +13,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, line):
         return True
+
+    def help_quit(self):
+        print("Quit command to exit the program\n")
 
     def emptyline(self):
         pass
