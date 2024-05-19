@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import json
 import os
-from models.base_model import BaseModel
 '''file storage'''
 
 
@@ -12,18 +11,18 @@ class FileStorage:
 
     def all(self):
         return FileStorage.__objects
-    
+
     def new(self, obj):
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = obj
-    
+
     def save(self):
         obj_dict = {}
         for key, obj in FileStorage.__objects.items():
-            obj_dict[key] = obj.to_dict() 
+            obj_dict[key] = obj.to_dict()
         with open(FileStorage.__file_path, "w") as f:
             json.dump(FileStorage.__objects, f)
-    
+
     def reload(self):
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r") as f:
