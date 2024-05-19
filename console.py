@@ -1,26 +1,21 @@
 #!/usr/bin/python3
 import cmd
-'''console'''
+'''Command Line Interpreter'''
 
 
 class HBNBCommand(cmd.Cmd):
-    '''console'''
+    '''Command Line Interpreter'''
     prompt = '(hbnb) '
 
     def do_EOF(self, line):
+        print("")
         return True
 
     def do_quit(self, line):
         return True
 
     def emptyline(self):
-        return super().emptyline()
-
-    def help_quit(self):
-        print('Quit command to exit the program\n')
-
-    def help_EOF(self):
-        print('EOF command to exit the program\n')
+        pass
 
 
 if __name__ == '__main__':
